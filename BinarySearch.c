@@ -20,7 +20,7 @@ int main() {
 
     int beg = 0, end = n-1, mid;
     while (beg <= end) {
-        mid = beg + (end - beg) / 2;
+        mid = (beg + end) / 2;
         if (arr[mid] == e) {
             found = mid;
             break;  
