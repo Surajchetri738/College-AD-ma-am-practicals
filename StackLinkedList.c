@@ -10,16 +10,14 @@ struct node *p;
 
 int main(){
     p = (struct node *)malloc(sizeof(struct node));
+    p->val = 999; 
+    p->next = '\0';
     int x, choice; char ans;
-    void create(struct node *);
+    // void create(struct node *);
     void push(struct node *, int);
     int pop(struct node *);
     void disp(struct node*);
-
-    printf("Enter the element in the linkedlist, at the end press 999:");
-    create(p);
-    disp(p);
-
+    
     do
     {
         printf("\nChoose which operation you want to do with this stack:\n1.PUSH\n2.POP:");
@@ -50,19 +48,19 @@ int main(){
 
     return 0;
 }
-void create(struct node *q){
-    scanf("%d", &q->val);
-    if (q->val == 999)
-    {
-        q->next = '\0';
-        return;
-    }
-    else
-    {
-        q->next = (struct node *)malloc(sizeof(struct node));
-        create(q->next);
-    }
-}
+// void create(struct node *q){
+//     scanf("%d", &q->val);
+//     if (q->val == 999)
+//     {
+//         q->next = '\0';
+//         return;
+//     }
+//     else
+//     {
+//         q->next = (struct node *)malloc(sizeof(struct node));
+//         create(q->next);
+//     }
+// }
 
 void disp(struct node *q){
     while (q->val != 999)
